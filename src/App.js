@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function App() {
   return (
     <>
-      <Header text="hello world" />
+      <Header />
       <div className="container">
         <h1>my app</h1>
       </div>
@@ -15,9 +15,13 @@ function App() {
 
 Header.defaultProps = {
   text: "Feedback UI",
+  bgColor: 'rgba(0,0,0,0.4)',
+  textColor: '#ff6a9'
 };
 
 Header.propTypes = {
   text: PropTypes.string,
+  bgColor: PropTypes.string,
+  textColor: PropTypes.string,
 };
 export default App;
