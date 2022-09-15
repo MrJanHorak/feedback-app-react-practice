@@ -1,5 +1,6 @@
 import React from "react";
 import FeedBackItem from "./FeedBackItem";
+import PropTypes from "prop-types";
 
 function FeedBackList({ feedback }) {
   if (!feedback || feedback.length === 0) {
@@ -14,5 +15,15 @@ function FeedBackList({ feedback }) {
     </div>
   );
 }
+
+FeedBackList.propTypes = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ),
+};
 
 export default FeedBackList;

@@ -1,7 +1,7 @@
-import Card from "./shared/Card"; 
+import Card from "./shared/Card";
+import PropTypes from "prop-types";
 
-function FeedBackItem({item}) {
-
+function FeedBackItem({ item }) {
   return (
     <Card>
       <div className="num-display">{item.rating}</div>
@@ -9,5 +9,9 @@ function FeedBackItem({item}) {
     </Card>
   );
 }
+
+FeedBackItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
 
 export default FeedBackItem;
