@@ -1,8 +1,8 @@
 import React from "react";
-import FeedBackItem from "./FeedBackItem";
+import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
 
-function FeedBackList({ feedback, handleDelete }) {
+function FeedbackList({ feedback, handleDelete }) {
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback Yet</p>;
   }
@@ -10,7 +10,7 @@ function FeedBackList({ feedback, handleDelete }) {
   return (
     <div className="feedback-list">
       {feedback.map((item) => (
-        <FeedBackItem
+        <FeedbackItem
           key={item.id}
           item={item}
           handleDelete={handleDelete}
@@ -20,7 +20,7 @@ function FeedBackList({ feedback, handleDelete }) {
   );
 }
 
-FeedBackList.propTypes = {
+FeedbackList.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -30,4 +30,4 @@ FeedBackList.propTypes = {
   ),
 };
 
-export default FeedBackList;
+export default FeedbackList;
