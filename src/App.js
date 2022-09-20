@@ -6,7 +6,9 @@ import FeedBackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import FeedBackData from "./data/FeedBackData";
+import AboutIconLink from "./components/AboutIconLink";
 import AboutPage from "./pages/AboutPage";
+import { FeedbackProvider } from "./context/FeedbackContext";
 
 import PropTypes from "prop-types";
 
@@ -24,7 +26,7 @@ function App() {
     setFeedback([newFeedback, ...feedback]);
   };
   return (
-    <>
+    <FeedbackProvider>
       <Router>
         <Header />
         <div className="container">
@@ -35,19 +37,17 @@ function App() {
               element={
                 <>
                   <FeedbackForm handleAdd={addFeedback} />
-                  <FeedbackStats feedback={feedback} />
-                  <FeedBackList
-                    feedback={feedback}
-                    handleDelete={deleteFeedback}
-                  />
+                  <FeedbackStats />
+                  <FeedBackList handleDelete={deleteFeedback} />
                 </>
               }
             ></Route>
             <Route path="/about" element={<AboutPage />} />
           </Routes>
+          <AboutIconLink />
         </div>
       </Router>
-    </>
+    </FeedbackProvider>
   );
 }
 
