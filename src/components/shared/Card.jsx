@@ -22,7 +22,7 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  childen: Proptypes.node.isRequired,
+  childen: Proptypes.node,
   reverse: Proptypes.bool,
 };
 
